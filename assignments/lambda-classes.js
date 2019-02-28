@@ -40,7 +40,7 @@ class Student extends Person {
         this.previousBackground = stuatt.previousBackground;
         this.className = stuatt.className;
         this.favSubjects = stuatt.favSubjects;
-        this.grade = stuatt.grade;
+        this.grade = 100;
     }
     listsSubject() {
         this.favSubjects.forEach(element => {
@@ -112,7 +112,6 @@ const Dwight = new Student({
     previousBackground: 'Head Salesman',
     className: 'CS111',
     favSubjects: ['React', 'Python', 'Ruby'],
-    grade: 100,
   });
 
   const Pam = new Student({
@@ -126,7 +125,6 @@ const Dwight = new Student({
     previousBackground: 'Office Administrator',
     className: 'Web18',
     favSubjects: ['Html', 'CSS', 'JavaScript'],
-    grade: 100,
   });
 
   const Stanley = new PM({
@@ -155,30 +153,31 @@ const Dwight = new Student({
 
 
 // Test
-Michael.speak();
-console.log(Michael.catchPhrase);
+console.log(Michael.age);//Testing Instructor inheriting Person properties
+Michael.speak();//Testing Instructor inheriting Person method
+console.log(Michael.catchPhrase);//Testing Instructor properties
 console.log(Michael.specialty);
 console.log(Michael.favLanguage);
-Jim.demo('JavaScript');
+Jim.demo('JavaScript');//Testing Instructor methods
 Jim.grade(Pam, 'Html');
-Dwight.speak();
-console.log(Dwight.className);
+Dwight.speak(); //Testing Student inheriting Person method
+console.log(Dwight.className);//Testing Student properties
 console.log(Dwight.previousBackground);
 console.log(Dwight.favSubjects);
-Dwight.listsSubject();
+Dwight.listsSubject();//Testing Student methods
 Pam.listsSubject();
 Pam.PRAssignment('Html');
 Pam.sprintChallenge('JavaScript');
-Stanley.speak();
-console.log(Stanley.catchPhrase);
-console.log(Stanley.gradClassName);
+Stanley.speak();//Testing PM inheriting Person method
+console.log(Stanley.catchPhrase);//Testing PM inheriting Instructor properties
+console.log(Stanley.gradClassName);//Testing PM properties
 console.log(Stanley.favInstructor);
-Karen.standUp('web_18ah');
+Karen.standUp('web_18ah');//Testing PM methods
 Karen.debugsCode(Dwight, 'Ruby');
-Michael.grading(Pam);
-Pam.graduate();
-Stanley.grading(Dwight);
-Dwight.graduate();
+Michael.grading(Pam);//Testing Instructor grading method
+Pam.graduate();//Testing Student graduate method
+Stanley.grading(Dwight);//Testing PM inheriting Instructor grading method
+Dwight.graduate();//Testing Student graduate method
 
 
 
